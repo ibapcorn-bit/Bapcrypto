@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+}
+
+/* Hide scrollbars cleanly for mobile horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area bottom padding for mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@keyframes qr-scan {
+  0%, 100% {
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(224px);
+  }
+}
+
+.animate-qr-scan {
+  animation: qr-scan 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes bio-scan {
+  0%, 100% {
+    transform: translateY(-28px);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(28px);
+    opacity: 1;
+  }
+}
+
+.animate-bio-scan {
+  animation: bio-scan 1.1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-qr-scan,
+  .animate-bio-scan {
+    animation: none;
+  }
+}
+

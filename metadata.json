@@ -1,0 +1,10 @@
+{
+  "name": "Vaultx Wallet",
+  "description": "Mobile crypto portfolio & wallet simulator with full inline editing for balances, tokens, charts, and transaction history.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
